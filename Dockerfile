@@ -19,9 +19,8 @@ RUN ls /config
 RUN mkdir /configtmp
 RUN cp -r /config /configtmp
 RUN rm -rf /config
-RUN mkdir /config
 RUN cd /configtmp
-RUN cp -r ./config ..
+RUN cp -r ./config /
 RUN cd ..
 RUN rm -rf /configtmp
 RUN chmod ugo+rwx /config
