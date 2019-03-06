@@ -20,6 +20,7 @@ RUN mkdir /configtmp
 RUN cp -r /config /configtmp
 RUN rm -rf /config
 RUN cd /configtmp
+RUN ls
 RUN cp -r ./config /
 RUN cd ..
 RUN rm -rf /configtmp
