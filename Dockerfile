@@ -14,16 +14,17 @@
 
 #FROM openliberty/open-liberty:microProfile1-java8-openj9
 FROM websphere-liberty:microProfile2
-
+USER root
 COPY src/main/liberty/config /config/
 COPY target/portfolio-1.0-SNAPSHOT.war /config/apps/Portfolio.war
 RUN ls /config
 
 #apt-get needs root access
-USER root
+
 RUN chmod g+w /config/apps
 RUN apt-get update
 RUN apt-get install curl -y
 #USER 1001
 
 RUN installUtility install --acceptLicense defaultServer
+RUN ls /config
