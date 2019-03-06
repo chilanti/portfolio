@@ -23,6 +23,6 @@ USER root
 RUN chmod g+w /config/apps
 RUN apt-get update
 RUN apt-get install curl -y
-USER 1001
+#USER 1001
 
 RUN installUtility install --acceptLicense defaultServer
