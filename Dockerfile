@@ -12,7 +12,7 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-FROM openliberty/open-liberty:microProfile2-java8-openj9
+FROM openliberty/open-liberty:microProfile1-java8-openj9
 #FROM websphere-liberty:microProfile2
 
 COPY src/main/liberty/config /config/
