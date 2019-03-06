@@ -15,6 +15,10 @@
 #FROM openliberty/open-liberty:microProfile1-java8-openj9
 FROM websphere-liberty:microProfile2
 USER root
+RUN ls /config
+RUN rm -rf /config
+RUN mkdir -rf /config
+RUN chmod ugo+rwx /config
 COPY src/main/liberty/config /config/
 COPY target/portfolio-1.0-SNAPSHOT.war /config/apps/Portfolio.war
 RUN ls /config
