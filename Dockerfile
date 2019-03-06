@@ -12,8 +12,8 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-FROM openliberty/open-liberty:microProfile1-java8-openj9
-#FROM websphere-liberty:microProfile2
+#FROM openliberty/open-liberty:microProfile1-java8-openj9
+FROM websphere-liberty:microProfile1
 
 COPY src/main/liberty/config /config/
 COPY target/portfolio-1.0-SNAPSHOT.war /config/apps/Portfolio.war
