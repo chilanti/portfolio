@@ -16,6 +16,13 @@
 FROM websphere-liberty:microProfile2
 USER root
 RUN ls /config
+RUN mkdir /configtmp
+RUN cp -r /config /configtmp
+RUN rm -rf /config
+RUN mkdir -rf /config
+RUN cp -r /configtmp /config
+RUN rm -rf /configtmp
+RUN chmod ugo+rwx /config
 COPY src/main/liberty/config/* /config/
 COPY target/portfolio-1.0-SNAPSHOT.war /config/apps/Portfolio.war
 RUN ls /config
