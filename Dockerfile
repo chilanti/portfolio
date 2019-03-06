@@ -17,6 +17,7 @@ FROM websphere-liberty:microProfile2
 
 COPY src/main/liberty/config /config/
 COPY target/portfolio-1.0-SNAPSHOT.war /config/apps/Portfolio.war
+RUN ls /config
 
 #apt-get needs root access
 USER root
